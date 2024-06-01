@@ -11,7 +11,9 @@ connection.sync({ force: true }) // force: true will drop the table if it alread
   .catch(err => {
     console.error('Error creating database & tables:', err);
   });
-
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+})
 app.listen(process.env.PORT,async()=>{
     try{
         connection.authenticate();
